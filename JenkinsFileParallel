@@ -4,7 +4,7 @@ stage("Checkout") {
 
         node('master') {
 
-           git 'https://github.com/duotechacademy/JenkinsCrossBrowserParallelTestingCucumberFramework' 
+           git 'https://github.com/YuliaK999/Delta_Travelocity_CrossBrowserParallel.git' 
 
         }
 
@@ -14,7 +14,7 @@ stage("Checkout") {
 
         node('linux') {
 
-           git 'https://github.com/duotechacademy/JenkinsCrossBrowserParallelTestingCucumberFramework' 
+           git 'https://github.com/YuliaK999/Delta_Travelocity_CrossBrowserParallel.git' 
 
   
 
@@ -26,7 +26,7 @@ stage("Checkout") {
 
         node('mac') {
 
-           git 'https://github.com/duotechacademy/JenkinsCrossBrowserParallelTestingCucumberFramework' 
+           git 'https://github.com/YuliaK999/Delta_Travelocity_CrossBrowserParallel.git' 
 
   
 
@@ -130,7 +130,7 @@ stage("Email") {
 
         node('master') {
 
-              step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'duotechinstructor@gmail.com', sendToIndividuals: false])  
+              step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'mariaalemdar@gmail.com', sendToIndividuals: false])  
 
         }
 
@@ -140,7 +140,7 @@ stage("Email") {
 
         node('linux') {
 
-            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'duotechinstructor@gmail.com', sendToIndividuals: false])  
+            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'mariaalemdar@gmail.com', sendToIndividuals: false])  
 
 
 
@@ -152,7 +152,7 @@ stage("Email") {
 
         node('mac') {
 
-            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'duotechinstructor@gmail.com', sendToIndividuals: false])  
+            step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'mariaalemdar@gmail.com', sendToIndividuals: false])  
 
 
 
