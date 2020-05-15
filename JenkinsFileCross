@@ -1,0 +1,22 @@
+node {
+    stage("Checkout") {
+     git 'https://github.com/YuliaK999/Delta_Travelocity_CrossBrowserParallel.git'
+    }
+    stage("Chrome Tests") {
+       bat label: '', script: 'mvn verify -Dbrowser="chrome"'
+    }
+    stage("headlessChrome") {
+       bat label: '', script: 'mvn verify -Dbrowser="headlessChrome"'
+    }
+    stage("Edge Tests") {
+       bat label: '', script: 'mvn verify -Dbrowser="edge"'
+    }
+    stage("Report") {
+        junit '**/*Cucumber.xml'
+    }
+    stage("Email") {
+
+
+        step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'mariaalemdar@gmail.com', sendToIndividuals: false])
+    }
+}
