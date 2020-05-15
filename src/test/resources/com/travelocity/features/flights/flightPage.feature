@@ -2,7 +2,7 @@ Feature: Verify Flights main page
 
   Background: 
     Given I am on the flights page
-	
+	@test
   Scenario: Verify flights page
     When I click on Hotels button
     And I click on Flights button
@@ -47,7 +47,7 @@ Feature: Verify Flights main page
  	  And I click on Search button
  	  Then Flight tickets of corresponding trip type should be displayed
  	  
-  @test
+  
  	Scenario: Verify the flight ticket with excel
  		When I select "One way" as a trip type
     And I enter the flight details
