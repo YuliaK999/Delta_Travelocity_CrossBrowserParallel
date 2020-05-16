@@ -5,11 +5,11 @@ node {
     stage("Chrome Tests") {
        bat label: '', script: 'mvn verify -Dbrowser="chrome"'
     }
-    stage("headlessChrome") {
-       bat label: '', script: 'mvn verify -Dbrowser="headlessChrome"'
-    }
-    stage("Edge Tests") {
+      stage("Edge Tests") {
        bat label: '', script: 'mvn verify -Dbrowser="edge"'
+    }
+      stage("headlessChrome") {
+       bat label: '', script: 'mvn verify -Dbrowser="headlessChrome"'
     }
     stage("Report") {
         junit '**/*Cucumber.xml'
